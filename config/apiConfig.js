@@ -3,7 +3,7 @@ var API = ['api', 'v1.0'], // Config API: 0 => Base URL, 1 => Version
         // API Security
         __API_AUTHOR: 'STEVIE_658JJH__APPLICATION__V1.0',
         __API_KEY: 'wx0z34ajQVSsdF35m5xdhZa7ygStlAbRVnfNC',
-        __API_SECRET: 'iP]Y@!_zP@$dfGnAnxvKgy;C58#z=}D9YzS(Z',
+        __API_SECRET: 'iPh7ah2siIqOAKSjsnsPA2lLapqoaU9sU29Hak300siNNaoscjpwIIaksgnUanMak',
         __KEY_UPLOAD: '28sj2j402H92Js2sh72NM2si12su',
         __MY_MAC_ID1: '40-8D-5C-66-40-9A',
         __MY_MAC_ID2: 'DC-85-DE-FC-C5-69',
