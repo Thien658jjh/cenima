@@ -19,6 +19,32 @@ module.exports = (() => {
         })
     }
 
+    appRoute.deleteStory = (req, res) => {
+        storyModel.remove({ iddb: req.request.iddb }, (err) => {
+            if (err) {
+                res.status(200).json({
+                    code: 403,
+                    stories: "Failed"
+                })
+            } else {
+                res.status(200).json({ code: 403, message: 'Deleted' })
+            }
+        })
+    }
+
+    appRoute.deleteAllStory = (req, res) => {
+        storyModel.remove({}, (err) => {
+            if (err) {
+                res.status(200).json({
+                    code: 403,
+                    stories: "Failed"
+                })
+            } else {
+                res.status(200).json({ code: 403, message: 'Deleted' })
+            }
+        })
+    }
+
     // User register    
     appRoute.createNewStory = (req, res) => {
         require('getmac').getMac(function (err, macAddress) {
@@ -74,7 +100,7 @@ module.exports = (() => {
                             }
                         })
                     } else {
-                        res.status(200).json({ code: 403, message: 'The request is understood, but have somethings wrong !!' + macAddress})
+                        res.status(200).json({ code: 403, message: 'The request is understood, but have somethings wrong !!' + macAddress })
                     }
                 } else {
                     res.status(200).json({ code: 403, message: 'The request is understood, but it has been refused or access is not allowed' })
