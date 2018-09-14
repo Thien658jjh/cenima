@@ -7,42 +7,54 @@ module.exports = (() => {
         appRoute = {}
 
     appRoute.getStory = (req, res) => {
-        storyModel.find({}, (err, result) => {
-            if (result) {
-                res.status(200).json({
-                    code: 200,
-                    stories: result
-                })
-            } else {
-                res.status(200).json({ code: 403, message: 'Loi !!' })
-            }
-        })
+        if (func.__check_header_request(req.request.key, req.request.secret)) {
+            storyModel.find({}, (err, result) => {
+                if (result) {
+                    res.status(200).json({
+                        code: 200,
+                        stories: result
+                    })
+                } else {
+                    res.status(200).json({ code: 403, message: 'Loi !!' })
+                }
+            })
+        } else {
+            res.status(200).json({ code: 403, message: 'Getting failed' })
+        }
     }
 
     appRoute.deleteStory = (req, res) => {
-        storyModel.remove({ iddb: req.request.iddb }, (err) => {
-            if (err) {
-                res.status(200).json({
-                    code: 403,
-                    stories: "Failed"
-                })
-            } else {
-                res.status(200).json({ code: 403, message: 'Deleted' })
-            }
-        })
+        if (func.__check_header_request(req.request.key, req.request.secret)) {
+            storyModel.remove({ iddb: req.request.iddb }, (err) => {
+                if (err) {
+                    res.status(200).json({
+                        code: 403,
+                        stories: "Failed"
+                    })
+                } else {
+                    res.status(200).json({ code: 403, message: 'Deleted' })
+                }
+            })
+        } else {
+            res.status(200).json({ code: 403, message: 'Getting failed' })
+        }
     }
 
     appRoute.deleteAllStory = (req, res) => {
-        storyModel.remove({}, (err) => {
-            if (err) {
-                res.status(200).json({
-                    code: 403,
-                    stories: "Failed"
-                })
-            } else {
-                res.status(200).json({ code: 403, message: 'Deleted' })
-            }
-        })
+        if (func.__check_header_key(req.request.key)) {
+            storyModel.remove({}, (err) => {
+                if (err) {
+                    res.status(200).json({
+                        code: 403,
+                        stories: "Failed"
+                    })
+                } else {
+                    res.status(200).json({ code: 403, message: 'Deleted' })
+                }
+            })
+        } else {
+            res.status(200).json({ code: 403, message: 'Deleting failed' })
+        }
     }
 
     // User register    
