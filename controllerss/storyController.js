@@ -7,7 +7,7 @@ module.exports = (() => {
         appRoute = {}
 
     appRoute.getStory = (req, res) => {
-        if (func.__check_header_secret_key(req.request.secret)) {
+        if (func.__check_header_secret_key(req.query.secret)) {
             storyModel.find({}, (err, result) => {
                 if (result) {
                     res.status(200).json({
@@ -24,8 +24,8 @@ module.exports = (() => {
     }
 
     appRoute.deleteStory = (req, res) => {
-        if (func.__check_header_secret_key(req.request.secret)) {
-            storyModel.remove({ iddb: req.request.iddb }, (err) => {
+        if (func.__check_header_secret_key(req.query.secret)) {
+            storyModel.remove({ iddb: req.query.iddb }, (err) => {
                 if (err) {
                     res.status(200).json({
                         code: 403,
@@ -41,7 +41,7 @@ module.exports = (() => {
     }
 
     appRoute.deleteAllStory = (req, res) => {
-        if (func.__check_header_secret_key(req.request.secret)) {
+        if (func.__check_header_secret_key(req.query.secret)) {
             storyModel.remove({}, (err) => {
                 if (err) {
                     res.status(200).json({
