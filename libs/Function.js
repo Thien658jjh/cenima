@@ -45,11 +45,7 @@ let config = require('../config/apiConfig').CONFIG_API,
 
         // Check header request
         __check_header_request: (key, secret) => {
-            if (__check_header_key(key) && __check_header_secret_key(secret)) {
-                return true
-            } else {
-                return false
-            }
+            return __check_header_key(key) && __check_header_secret_key(secret)
         },
 
         __check_header_key: (key) => {
