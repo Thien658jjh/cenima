@@ -2,10 +2,27 @@ let mongoose = require('mongoose'),
 	Schema = mongoose.Schema,
 	storyModel = new Schema({
 		iddb: {
-			type: Schema.Types.ObjectId,
-			default: Schema.Types.ObjectId
+			type: Schema.ObjectId,
+			default: Schema.ObjectId
+		},
+		storyTime: {
+			type: Number,
+			default: Date.now()
 		},
 		storyName: {
+			type: String,
+			default: "",
+			require
+		},
+		storyNumber: {
+			type: Number,
+			default: -1
+		},
+		thumbUrl: {
+			type: String,
+			default: "",
+		},
+		storyNameVN: {
 			type: String,
 			default: "",
 			require
@@ -21,7 +38,7 @@ let mongoose = require('mongoose'),
 		},
 		vocabs: {
 			type: [],
-			default: [{ "idVocab": "", "vocabWord": "", "vocabMeaning": "", "phonemic": "" }]
+			default: [{ "idVocab": "", "vocabWord": "", "vocabType": "", "vocabMeaning": "", "phonemic": "" }]
 		},
 		idioms: {
 			type: [],

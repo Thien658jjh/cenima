@@ -1,6 +1,7 @@
 module.exports = (() => {
     let func = require('../libs/Function').function,
         mongoose = require('mongoose'),
+        uuidv4 = require('uuid/v4'),
         storyModel = mongoose.model('storyModel'),
         idiomModel = mongoose.model('idiomModel'),
         vocabModel = mongoose.model('vocabModel'),
@@ -19,7 +20,7 @@ module.exports = (() => {
                 }
             })
         } else {
-            res.status(200).json({ code: 403, message: 'Getting failed'})
+            res.status(200).json({ code: 403, message: 'Getting failed' })
         }
     }
 
@@ -36,7 +37,7 @@ module.exports = (() => {
                 }
             })
         } else {
-            res.status(200).json({ code: 403, message: 'Deleting failed'})
+            res.status(200).json({ code: 403, message: 'Deleting failed' })
         }
     }
 
@@ -64,6 +65,7 @@ module.exports = (() => {
             else
                 if (!func.isEmpty(req.body)
                     && req.body.storyName
+                    && req.body.storyNameVN
                     && req.body.storyOriginal
                     && req.body.storyVietNam
                     && req.body.vocabs
@@ -76,33 +78,24 @@ module.exports = (() => {
                                 })
                             } else {
                                 if (!result.length) {
-                                    vocabModel.create(req.body.vocabs, function (err, resultVocabs) {
+                                    new storyModel({
+                                        storyName: req.body.storyName,
+                                        storyNameVN: req.body.storyNameVN,
+                                        storyOriginal: req.body.storyOriginal,
+                                        storyVietNam: req.body.storyVietNam,
+                                        storyNumber: req.body.storyNumber,
+                                        thumbUrl: req.body.thumbUrl,
+                                        vocabs: req.body.vocabs,
+                                        idioms: req.body.idioms
+                                    }).save((err, data) => {
                                         if (err) {
-                                            res.status(403).json({ code: 403, message: "Create new vocabs err " });
+                                            res.status(200).json({
+                                                code: 400, message: 'Account registration failed' + err
+                                            })
                                         } else {
-                                            idiomModel.create(req.body.idioms, function (err2, resultIdioms) {
-                                                if (err) {
-                                                    res.status(403).json({ code: 403, message: "Create new idioms err " });
-                                                } else {
-                                                    new storyModel({
-                                                        storyName: req.body.storyName,
-                                                        storyOriginal: req.body.storyOriginal,
-                                                        storyVietNam: req.body.storyVietNam,
-                                                        vocabs: resultVocabs,
-                                                        idioms: resultIdioms
-                                                    }).save((err, data) => {
-                                                        if (err) {
-                                                            res.status(200).json({
-                                                                code: 400, message: 'Account registration failed'
-                                                            })
-                                                        } else {
-                                                            res.status(200).json({
-                                                                code: 200, message: 'Add new story successful',
-                                                                data: data
-                                                            })
-                                                        }
-                                                    })
-                                                }
+                                            res.status(200).json({
+                                                code: 200, message: 'Add new story successful',
+                                                data: data
                                             })
                                         }
                                     })

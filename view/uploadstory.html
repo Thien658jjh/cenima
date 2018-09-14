@@ -5,17 +5,34 @@
             <div class="row">
                 <div class="form-group col-sm-8">
                     <h5> Name story</h5>
-                    <textarea name="storyName" class="form-control col-sm-12 col-md-12 my-input-film ng-pristine ng-valid ng-empty ng-touched"
-                        id="storyName" rows="5" placeholder="Story's title" style="height: 50px" ng-model="storyName"></textarea>
-                </div>
-                
-                <div class="form-group col-sm-4">
-                        <h5>KEY</h5>
-                        <textarea class="form-control col-sm-12 col-md-12 my-input-film ng-pristine ng-valid ng-empty ng-touched"
-                         rows="5" placeholder="xxxxxxxx" style="height: 50px" ng-model="keyupload"></textarea>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <textarea name="storyName" class="form-control col-sm-12 col-md-12 my-input-film ng-pristine ng-valid ng-empty ng-touched"
+                                id="storyName" rows="5" placeholder="Story's title" style="height: 50px" ng-model="storyName"></textarea>
+                        </div>
+                        <div class="col-sm-6">
+                            <textarea name="storyNameVN" class="form-control col-sm-12 col-md-12 my-input-film ng-pristine ng-valid ng-empty ng-touched"
+                                id="storyNameVN" rows="5" placeholder="Tên truyện" style="height: 50px" ng-model="storyNameVN"></textarea>
+                        </div>
                     </div>
-            </div>
+                </div>
 
+                <div class="form-group col-sm-4">
+                    <h5>KEY</h5>
+                    <textarea class="form-control col-sm-12 col-md-12 my-input-film ng-pristine ng-valid ng-empty ng-touched"
+                        rows="5" placeholder="xxxxxxxx" style="height: 50px" ng-model="keyupload"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <textarea name="storyNumber" class="form-control col-sm-12 col-md-12 my-input-film ng-pristine ng-valid ng-empty ng-touched"
+                        id="storyNumber" rows="5" placeholder="Nmber" style="height: 50px" ng-model="storyNumber"></textarea>
+                </div>
+                <div class="col-sm-9">
+                    <textarea name="thumbUrl" class="form-control col-sm-12 col-md-12 my-input-film ng-pristine ng-valid ng-empty ng-touched"
+                        id="thumbUrl" rows="5" placeholder="thumbUrl" style="height: 50px" ng-model="thumbUrl"></textarea>
+                </div>
+            </div>
             <div class="row">
 
                 <div class="form-group col-sm-6 inline" style="display: inline-block">
@@ -41,11 +58,13 @@
 
                 <div class="vocab" id="vocabs" ng-mode="vocabs">
                     <div class="row">
-                        <textarea class="form-control col-sm-4 col-md-4 my-input-film ng-pristine ng-valid ng-empty ng-touched"
+                        <textarea class="form-control col-sm-3 col-md-3 my-input-film ng-pristine ng-valid ng-empty ng-touched"
                             placeholder="Word"></textarea>
-                        <textarea class="form-control col-sm-4 col-md-4 my-input-film ng-pristine ng-valid ng-empty ng-touched"
+                        <textarea class="form-control col-sm-1 col-md-1 my-input-film ng-pristine ng-valid ng-empty ng-touched"
+                            placeholder="Type"></textarea>
+                        <textarea class="form-control col-sm-5 col-md-5 my-input-film ng-pristine ng-valid ng-empty ng-touched"
                             placeholder="Meaning"></textarea>
-                        <textarea class="form-control col-sm-4 col-md-4 my-input-film ng-pristine ng-valid ng-empty ng-touched"
+                        <textarea class="form-control col-sm-3 col-md-3 my-input-film ng-pristine ng-valid ng-empty ng-touched"
                             placeholder="Phonemic"></textarea>
                     </div>
                 </div>

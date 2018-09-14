@@ -32,6 +32,7 @@
     "nodemailer-express-handlebars": "^3.0.0",
     "nodemon": "^1.17.1",
     "serve-favicon": "^2.4.5",
+    "uuid": "^3.3.2",
     "ws": "^5.0.0"
   },
   "devDependencies": {}
