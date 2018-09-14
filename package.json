@@ -1,0 +1,37 @@
+{
+  "name": "lession1",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./app.js --exec babel-node"
+  },
+  "author": "Thien 658JJH",
+  "license": "ISC",
+  "dependencies": {
+    "@ionic/app-scripts": "^3.1.6",
+    "@ionic/cli-utils": "^1.19.1",
+    "angular-route": "^1.6.9",
+    "async": "^2.6.0",
+    "babel-cli": "^6.26.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.2",
+    "cookie-parser": "^1.4.3",
+    "crypto": "^1.0.1",
+    "debug": "~2.6.9",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.16.2",
+    "express-fileupload": "^0.4.0",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "mongo": "^0.1.0",
+    "mongoose": "^5.0.8",
+    "morgan": "~1.9.0",
+    "nodemailer": "^4.6.0",
+    "nodemailer-express-handlebars": "^3.0.0",
+    "nodemon": "^1.17.1",
+    "serve-favicon": "^2.4.5",
+    "ws": "^5.0.0"
+  },
+  "devDependencies": {}
+}

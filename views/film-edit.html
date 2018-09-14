@@ -1,0 +1,63 @@
+<script src="/js/main/filmedit.js"> </script>
+<div ng-controller="upFilmEditController">
+    <form role="form" class="ng-pristine ng-valid" method="POST" action="/film/edit" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-sm-12 col-md-4 my-upload-image text-center animated fadeIn">
+                <a href="" ng-click="clickUploadImage()">
+                    <img id="imageFilm" name="imageFilm" ng-model="imageFilm" ng-src="" style="width: 300px; height: 300px">
+                </a>
+                <input type="file" ng-model="fileInput" style="display:none" id="fileInput" name="fileInput" accept="image/*" onchange="readURL(this)"
+                    required/>
+
+                <button type="button" class="btn btn-primary my-btn text-center" ng-click="clickUploadImage()">
+                    <i class="fa fa-file-image-o fa-lg" aria-hidden="true"></i>
+                    Chọn hình minh họa
+                </button>
+            </div>
+
+            <div class="col-sm-12 col-md-8 my-form-film animated flipInX">
+                <div class="form-group">
+                    <label for="filmname">Tên phim:</label>
+                    <input type="text" ng-model="id" style="display:none" id="id" name="id" />
+                    <input type="text" class="form-control" id="filmName" ng-model="filmName" name="filmName">
+                </div>
+                <div class="form-group">
+                    <h4>Thể loại phim:</h4>
+                    <select ng-options="genre for genre in listGenreFilms" name="categoryName" ng-model="categoryName" class="my-input-film col-md-12 col-sm-12 col-lg-12 col-xs-12 my-select-film ng-pristine ng-valid ng-not-empty ng-touched"
+                        id="filmGenre">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <h4> Thời gian phát hành: </h4>
+                    <select ng-options="month for month in listMonth" ng-model="filmMonth" class="my-input-film my-select-film col-lg-5 col-md-5 col-sm-5 col-xs-5 ng-pristine ng-valid ng-not-empty ng-touched"
+                        id="filmMonth" name="filmMonth">
+                    </select>
+
+                    <span class="col-xs-2 col-sm-2 col-md-2 col-lg-2 my-input-film my-select-film" />
+
+                    <select ng-options="year for year in listYear" name="filmYear" ng-model="filmYear" class="my-input-film col-md-5 col-sm-5 col-lg-5 col-xs-5 my-select-film ng-pristine ng-untouched ng-valid ng-not-empty float-right"
+                        id="filmYear">
+                    </select>
+                </div>
+                <div class="form-group">
+                    <h4> Nội dung mô tả:</h4>
+                    <textarea name="filmContent" class="form-control col-sm-12 col-md-12 my-input-film ng-pristine ng-valid ng-empty ng-touched"
+                        id="filmContent" rows="5" placeholder="Điền thông tin thêm về bộ phim, như diễn viên chính, nội dung bộ phim,..."
+                        ng-model="filmContent"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-container-right my-bot-form">
+            <button type="submit" class="btn btn-primary my-btn text-center animated slideInUp" style="margin-right:15px">
+                <i class="fa fa-save fa-lg"></i>
+                Hoàn tất
+            </button>
+
+            <button class="btn btn-danger my-btn text-center animated slideInUp" style="margin-right:15px" onclick="goBack()">
+                <i class="fa fa-times fa-lg"></i>
+                Hủy
+            </button>
+        </div>
+    </form>
+    <!-- </div> -->

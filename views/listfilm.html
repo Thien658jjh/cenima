@@ -1,0 +1,24 @@
+<script src="/js/main/loadfilm.js"></script>
+<div ng-controller="loadFilmController">
+    
+        <div class="form-inline my-2 my-lg-0" id="formSearch" style="margin: 30px">
+                <input class="form-control mr-sm-2" id="filmsearch" type="text" ng-model="filmsearch" placeholder="Search">
+            </div>
+    <div class="row" style="margin-top: 30px">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 my-portfolio-item animated fadeInUp" ng-repeat="film in listFilm | filter: filmsearch"  ng-cloak>
+
+            <a ng-href="[[urlFilm(film)]]" onclick="goToFilm(film)" target="_self">
+                <img ng-src="[[film.photo]]" class="img-responsive" alt=" [[ film.filmName ]]">
+                <div class="detail">
+                    <h2 class="name-film" ng-init="yearfilm=getYearFilm(film)"> [[ film.filmName ]] ([[ yearfilm ]]) </h2>
+                    <hr class="hr-film">
+                    <p class="content-film">
+                        <span class="my-text-bold"> Thể loại: </span>[[film.categoryName]] </p>
+                    <p class="content-film" ng-init="content=minContentFilm(film)">
+                    <span class="my-text-bold"> Nội dung: </span> [[content]] </p>
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>

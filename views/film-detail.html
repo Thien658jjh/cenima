@@ -1,0 +1,40 @@
+<script src="/js/main/detail.js"></script>
+
+<div id="detail-film" ng-controller="filmDetailController">
+    <div class="my-container-center my-title-header animated flipInX" ng-cloak>
+        <h1 class="title-name-film" id="name"></h1>
+    </div>
+
+    <div class="row ">
+        <div class="col-sm-12 col-md-5 my-detail-image text-center">
+            <a href="#" data-toggle="modal" data-target="#modalImage">
+                <img ng-src="" id="image" class="image-detail">
+            </a>
+        </div>
+
+        <div class="col-sm-12 col-md-7 animated flipInX" ng-cloak>
+            <h4> Thể loại: &nbsp;
+                <span id="category"></span>
+            </h4>
+            <h4> Thời điểm phát hành: &nbsp;
+                <span id="year"></span>
+            </h4>
+            <h4> Nội dung mô tả: </h4>
+            <p id="detail"> </p>
+        </div>
+    </div>
+    <div class="my-container-center my-bot-form">
+        <button class="btn btn-primary my-btn text-center animated slideInUp" style="margin: 10px" onclick="javascript:window.location.href='/'">
+            <i class="fa fa-arrow-circle-left fa-lg"></i>
+            Quay trở về
+        </button>
+        <button class="btn btn-danger my-btn text-center animated slideInUp" id="delete" style="display: none" ng-click="deleteFilm()">
+            <i class="fa fa-trash fa-lg"></i>
+            Xóa phim
+        </button>
+        <button class="btn btn-warning my-btn text-center animated slideInUp" id="edit" style=" display: none; " ng-click="editFilm()">
+            <i class="fa fa-edit fa-lg"></i>
+            Sửa
+        </button>
+    </div>
+</div>

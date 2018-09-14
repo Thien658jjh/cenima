@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\config",
+    "\\controllers",
+    "\\public",
+    "\\public\\js",
+    "\\public\\js\\main",
+    "\\routes",
+    "\\views"
+  ],
+  "SelectedNode": "\\controllers\\uploadController.js",
+  "PreviewInSolutionExplorer": false
+}

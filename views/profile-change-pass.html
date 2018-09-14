@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="/stylesheets/profile.css">
+<script src="/js/main/profilechangepass.js"></script>
+
+<div class="container my-container-center">
+    <form role="form" class="ng-pristine ng-valid ng-valid-maxlength" ng-controller="profileChangePsController"
+        enctype="multipart/form-data">
+        <div class="my-container-center animated flipInX my-div-block" id="my-div-block-top" style="height: 430px">
+            <div class="form-group">
+                <div class="input-group my-div my-div-2">
+                    <h2 style="text-align:center">Thay đổi mật khẩu</h2>
+                </div>
+
+                <input type="text" class="form-control" ng-model="_id" name="_id" id="_id" value="" style="display: none">
+                <h6> Mật khẩu cũ </h6>
+                <div class="input-group my-div my-div-2">
+                    <span class="input-group-addon">
+                        <i class="fa fa-key fa-lg"></i>
+                    </span>
+                    <input type="password" class="form-control" ng-model="oldpass" name="oldpass" id="oldpass" value="">
+                </div>
+
+                <h6> Mật khẩu mới </h6>
+                <div class="input-group my-div my-div-2">
+                    <span class="input-group-addon">
+                        <i class="fa fa-key fa-lg"></i>
+                    </span>
+                    <input type="password" class="form-control" name="newpass" id="newpass" ng-model="newpass" value="">
+                </div>
+
+                <h6> Xác nhận mật khẩu mới </h6>
+                <div class="input-group my-div my-div-2">
+                    <span class="input-group-addon">
+                        <i class="fa fa-key fa-lg"></i>
+                    </span>
+                    <input type="password" class="form-control" id="newpasscomfirm" name="newpasscomfirm" ng-model="newpasscomfirm">
+                </div>
+                <div class="my-container-right">
+                    <button type="submit" class="btn btn-primary my-btn-profile text-center animated slideInUp" ng-click="changeNow()">
+                        <i class="fa fa-floppy-o fa-lg" aria-hidden="true"></i>
+                        Lưu thay đổi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

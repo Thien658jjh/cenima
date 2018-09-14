@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="cinema" class="ng-scope">
+
+<head>
+
+    <!-- load Google Fonts  -->
+    <link href="//fonts.googleapis.com/css?family=Paytone+One|Quicksand&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Oswald:700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet"> -->
+
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/loader.css">
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.6.9/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+    <script src="https://npmcdn.com/bootstrap@4.0.0-alpha.5/dist/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+
+    <script src="/libs/sweetalert.js"></script>
+    <script src="/js/main/app.js"></script>
+    <meta charset="UTF-8" />
+    <title>Module {{title}} - Admin Panel</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="my-detail">Cinema Application</h2>
+        <nav class="navbar navbar-toggleable-md navbar-light bg-faded my-nav">
+
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent" ng-controller="todoController">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active my-a">
+                        <a class="nav-link" href="/">Home
+                            <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item my-a" id="tabUpload">
+                        <a class="nav-link" href="/upfilm" onclick="goUpload()">Upload film</a>
+                    </li>
+                    <li class=" nav-item my-a" id="tabLogin">
+                        <a class="nav-link" onclick="goLogin()" href="/login">Login</a>
+                    </li>
+
+                    <li class=" nav-item my-a" id="tabRegister" style="display: none">
+                        <a class="nav-link" onclick="goLogin()" href="/register">Register</a>
+                    </li>
+
+                    <li class=" nav-item my-a" id="tabloginShow" style="display: none">
+                        <strong>
+                            <a class="nav-link" onclick="goProfile()" href="/profile" id="nameusercurrent">
+                            </a>
+                        </strong>
+                    </li>
+                    <li class=" nav-item my-a" id="tabloginShow2" style="display: none">
+                        <a class="nav-link" onclick="logOut()">
+                            <span id="nameusercurrent">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- dialog loong -->
+
+        <!-- Trigger the modal with a button -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog modal-lg">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Modal Header</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Some text in the modal.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="my-portfolio my-detail box-shadow">
+            {{{body}}}
+        </div>
+    </div>
+</body>
+
+</html>

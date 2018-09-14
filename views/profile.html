@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="/stylesheets/profile.css">
+<script src="/js/main/profile.js"></script>
+
+<div class="container my-container-center">
+    <form role="form" class="ng-pristine ng-valid ng-valid-maxlength" ng-controller="profileController" method="POST" action="/profile"
+        enctype="multipart/form-data">
+        <div class="my-container-center animated flipInX my-div-block" id="my-div-block-top">
+            <div class="form-group">
+                <input style="display: none" name="_id" id="_id" />
+                <div class="input-group my-div my-div-2">
+                    <h2 style="text-align:center">Thông tin cá nhân</h2>
+                </div>
+
+                <div class="my-input-avatar">
+                    <a href="" ng-click="clickUploadImage()">
+                        <img class="imageAvatar" id="imageAvatar" name="imageAvatar" ng-src="./images/default.svg">
+                    </a>
+                    <input type="file" style="display:none; margin-top: 15px" id="fileInputAvatar" name="fileInputAvatar" accept="image/*" onchange="readURLImg(this)">
+                    <span> </span>
+                    <div class="input-group my-container-center">
+                        <button type="button" class="btn btn-secondary my-btn text-center" ng-click="clickUploadImage()" style="color:black; width: 80px; font-size: 12px; margin-top: 10px">
+                            Chọn
+                        </button>
+                    </div>
+                </div>
+
+                <h6> Email </h6>
+                <div class="input-group my-div my-div-2">
+                    <span class="input-group-addon">
+                        <i class="fa fa-envelope fa-lg"></i>
+                    </span>
+                    <input type="text" class="form-control" ng-model="email" name="email" disabled="" id="email" value="">
+                </div>
+
+                <h6> Tên người dùng </h6>
+                <div class="input-group my-div my-div-2">
+                    <span class="input-group-addon">
+                        <i class="fa fa-address-card fa-lg"></i>
+                    </span>
+                    <input type="text" class="form-control" name="username" id="username" placeholder="Tên người dùng" maxlength="30" value="">
+                </div>
+
+                <h6> Số điện thoại </h6>
+                <div class="input-group my-div my-div-2">
+                    <span class="input-group-addon">
+                        <i class="fa fa-phone-square fa-lg"></i>
+                    </span>
+                    <input type="number" class="form-control" id="phone" name="phone" placeholder="Số điện thoại" ng-model="phone">
+                </div>
+                <div class="my-container-right">
+                    <a href="/profile/changepass" class="btn btn-primary my-btn-profile text-center animated slideInUp" style="margin: 10px">
+                        <i class="fa fa-floppy-o fa-lg" aria-hidden="true"></i>
+                        Đổi mật khẩu
+                    </a>
+                    <button type="submit" class="btn btn-primary my-btn-profile text-center animated slideInUp" style="margin: 10px">
+                        <i class="fa fa-floppy-o fa-lg" aria-hidden="true"></i>
+                        Lưu thay đổi
+                    </button>
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </form>
+</div>

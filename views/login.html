@@ -1,0 +1,49 @@
+
+<script src="/js/main/login.js"></script>
+<div ng-controller="loginController">
+<div class="modal-dialog my-modal-dialog" role="document">
+    <div class="modal-content my-modal-content">
+        <div class="modal-header my-modal-header">
+            <div class="text-center">
+                <h3 class="modal-title my-font-title" id="modalLoginLabel">Đăng nhập</h3>
+            </div>
+        </div>
+        <div class="modal-body my-modal-body">
+            <form role="form" class="ng-valid ng-dirty ng-valid-parse">
+                <div class="input-group my-div">
+                    <span class="input-group-addon">
+                        <i class="fa fa-envelope fa-fw"></i>
+                    </span>
+                    <input class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" placeholder="Địa chỉ email"
+                        id="email" name="email" ng-model="email">
+                </div>
+                <div class="input-group my-div">
+                    <span class="input-group-addon">
+                        <i class="fa fa-key fa-fw"></i>
+                    </span>
+                    <input type="password" class="form-control ng-valid ng-not-empty ng-dirty ng-valid-parse ng-touched" id="password" name="password"
+                        placeholder="Mật khẩu" ng-model="password">
+                </div>
+                <div class="form-group">
+                        <input type="checkbox" value="true" id="rememberPassword" name="rememberPassword" ng-model="rememberPassword" class="ng-pristine ng-untouched ng-valid ng-empty"> Lưu mật khẩu
+                    </div>
+            
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary" id="btnLogin" name="btnLogin" ng-click="clickLogins()">
+                        <i class="fa fa-sign-in fa-lg" aria-hidden="true"></i> Đăng nhập </button>
+                </div>
+            </form>
+            <div class="row col-xs-12 col-sm-12 col-md-12" style="margin-top:10px">
+                <a href="#" class="my-text-bold" data-toggle="modal" data-target="#modalForgetPassword" data-dismiss="modal"> Quên mật khẩu
+                    <i class="fa fa-question-circle fa-fw" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="row col-xs-12 col-sm-12 col-md-12 my-text-bold" style="margin-top:5px;margin-bottom:15px">
+                Bạn chưa là thành viên.
+                <a href="/register">
+                    Đăng ký </a>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+</div>
