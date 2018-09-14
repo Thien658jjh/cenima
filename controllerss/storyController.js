@@ -41,7 +41,7 @@ module.exports = (() => {
     }
 
     appRoute.deleteAllStory = (req, res) => {
-        if (func.__check_header_key(req.request.key)) {
+        if (func.__check_header_request(req.request.key, req.request.secret)) {
             storyModel.remove({}, (err) => {
                 if (err) {
                     res.status(200).json({
