@@ -19,7 +19,7 @@ module.exports = (() => {
                 }
             })
         } else {
-            res.status(200).json({ code: 403, message: 'Getting failed' })
+            res.status(200).json({ code: 403, message: 'Getting failed' + req.query.secret})
         }
     }
 
@@ -36,7 +36,7 @@ module.exports = (() => {
                 }
             })
         } else {
-            res.status(200).json({ code: 403, message: 'Getting failed' })
+            res.status(200).json({ code: 403, message: 'Delete failed' + req.query.secret })
         }
     }
 
