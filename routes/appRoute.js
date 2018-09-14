@@ -3,7 +3,7 @@ module.exports = (app) => {
         config = require('../config/config').CONFIG_API
 
     // Route get, post, put...
-    app.route('/')
+    app.route('/x')
         .get(appController.home)
 
     app.route('/upfilm')

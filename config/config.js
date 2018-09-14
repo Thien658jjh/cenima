@@ -1,7 +1,8 @@
 var API_VERSION = ['api', 'api-test'],
     CONFIG_MONGO = {
         // __MONGO_LINK: 'mongodb://admin:admin@ds155218.mlab.com:55218/cinema'
-        __MONGO_LINK: 'mongodb://localhost/cinema'
+        // __MONGO_LINK: 'mongodb://localhost/cinema'
+        __MONGO_LINK: 'mongodb://oqpsajsngpapasjwgnskamzasskksnwir:uqUsn829Upq2ngKla0o2N4Msquss1n4paknd93nAIsnwl0sowUNagnxk30siwB@ds151892.mlab.com:51892/truyensongngu'
     },
 
     CONFIG_API = {

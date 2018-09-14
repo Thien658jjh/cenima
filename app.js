@@ -31,9 +31,9 @@ app.use(fileUpload());
 app.engine('html', html({
   extname: 'html',
   defaultLayout: 'template-layout',
-  layoutsDir: __dirname + '/views/'
+  layoutsDir: __dirname + '/view/'
 }))
-app.set('views', path.join(__dirname, 'views'))
+app.set('views', path.join(__dirname, 'view'))
 app.set('view engine', 'html')
 
 // Config body parser json
@@ -43,12 +43,18 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json())
 
 // Config Public folder
-app.use(express.static(path.join(__dirname, 'public')))
+app.use(express.static(path.join(__dirname, 'publics')))
 
 // Model config
 var categoryModel = require("./models/categoryModel"),
   filmModel = require('./models/filmModel'),
-  userModel = require('./models/userModel')
+  userModel = require('./models/userModel'),
+
+  appModel2 = require('./model/appModel'), // App model
+    userModel2 = require('./model/userModel'), // App model
+    storyModel2 = require('./model/storyModel'), // App model
+    vocabModel2 = require('./model/vocabModel'), // App model
+    idiomModel2 = require('./model/idiomModel')
 
 // Route config
 var adminRoute = require('./routes/adminRoute')(app),
@@ -57,7 +63,11 @@ var adminRoute = require('./routes/adminRoute')(app),
   userRoute = require('./routes/userRoute')(app),
   home = require('./routes/appRoute')(app),
   uploadRoute = require('./routes/uploadRoute')(app),
-  infoUserRoute = require('./routes/infoUserRoute')(app)
+  infoUserRoute = require('./routes/infoUserRoute')(app),
+
+  appRoute = require('./route/appRoute')(app),
+  userRoute2 = require('./route/userRoute')(app),
+  storyRoute = require('./route/storyRoute')(app)
 
 app.listen(port)
 
