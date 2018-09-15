@@ -8,20 +8,28 @@ module.exports = (() => {
         appRoute = {}
 
     appRoute.getStory = (req, res) => {
-        if (func.__check_header_secret_key(req.query.secret)) {
-            storyModel.find({}, (err, result) => {
-                if (result) {
-                    res.status(200).json({
-                        code: 200,
-                        stories: result
-                    })
-                } else {
-                    res.status(200).json({ code: 403, message: 'Loi !!' })
-                }
-            })
+        if (func.__check_header_secret_key(req.query.secret)
+            && req.query.offset) {
+            storyModel.find()
+                .limit(5)
+                .skip(parseInt(req.query.offset))
+                .exec(function (err, result) {
+                    if (result) {
+                        res.status(200).json({
+                            code: 200,
+                            stories: result
+                        })
+                    } else {
+                        res.status(200).json({ code: 403, message: 'Loi !!' + err })
+                    }
+                })
+
+
+
         } else {
             res.status(200).json({ code: 403, message: 'Getting failed' })
         }
+
     }
 
     appRoute.deleteStory = (req, res) => {
