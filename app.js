@@ -51,10 +51,10 @@ var categoryModel = require("./models/categoryModel"),
   userModel = require('./models/userModel'),
 
   appModel2 = require('./model/appModel'), // App model
-    userModel2 = require('./model/userModel'), // App model
-    storyModel2 = require('./model/storyModel'), // App model
-    vocabModel2 = require('./model/vocabModel'), // App model
-    idiomModel2 = require('./model/idiomModel')
+  userModel2 = require('./model/userModel'), // App model
+  storyModel2 = require('./model/storyModel'), // App model
+  vocabModel2 = require('./model/vocabModel'), // App model
+  idiomModel2 = require('./model/idiomModel')
 
 // Route config
 var adminRoute = require('./routes/adminRoute')(app),

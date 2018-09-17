@@ -1,5 +1,6 @@
 module.exports = (() => {
     let func = require('../libs/Function').function,
+        firebase = require('../controllerss/firebaseController').function,
         mongoose = require('mongoose'),
         uuidv4 = require('uuid/v4'),
         storyModel = mongoose.model('storyModel'),
@@ -76,46 +77,21 @@ module.exports = (() => {
                     && req.body.vocabs
                     && req.body.idioms) {
                     if (func.__verify_keyupload(req.body.keyupload) | func.__verify_mac_address(macAddress)) {
-                        storyModel.find({ storyName: req.body.storyName }, (error, result) => {
-                            if (error) {
-                                res.status(200).json({
-                                    code: 403, message: 'Failed'
-                                })
+                        firebase.newStory(req.body, resu => {
+                            if (!resu) {
+                                res.status(200).json({ code: 200, message: 'Saved' })
                             } else {
-                                if (!result.length) {
-                                    new storyModel({
-                                        storyName: req.body.storyName,
-                                        storyNameVN: req.body.storyNameVN,
-                                        storyOriginal: req.body.storyOriginal,
-                                        storyVietNam: req.body.storyVietNam,
-                                        storyNumber: req.body.storyNumber,
-                                        thumbUrl: req.body.thumbUrl,
-                                        vocabs: req.body.vocabs,
-                                        idioms: req.body.idioms
-                                    }).save((err, data) => {
-                                        if (err) {
-                                            res.status(200).json({
-                                                code: 400, message: 'Account registration failed' + err
-                                            })
-                                        } else {
-                                            res.status(200).json({
-                                                code: 200, message: 'Add new story successful',
-                                                data: data
-                                            })
-                                        }
-                                    })
-                                } else {
-                                    res.status(200).json({ code: 400, message: 'Already exists' })
-                                }
+                                res.status(200).json({ code: 403, message: 'Failed' })
                             }
                         })
                     } else {
-                        res.status(200).json({ code: 403, message: 'The request is understood, but have somethings wrong !!' + macAddress })
+                        res.status(200).json({ code: 403, message: 'The request is understood, but have somethings wrong !!' })
                     }
                 } else {
                     res.status(200).json({ code: 403, message: 'The request is understood, but it has been refused or access is not allowed' })
                 }
         })
+
     }
 
     return appRoute
