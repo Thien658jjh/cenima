@@ -1,10 +1,6 @@
 let mongoose = require('mongoose'),
 	Schema = mongoose.Schema,
 	storyModel = new Schema({
-		iddb: {
-			type: Schema.ObjectId,
-			default: Schema.ObjectId
-		},
 		storyTime: {
 			type: Number,
 			default: Date.now()

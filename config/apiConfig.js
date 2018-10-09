@@ -12,6 +12,8 @@ var API = ['api', 'v1.0'], // Config API: 0 => Base URL, 1 => Version
         // Link API
         __link_user: API[0] + '/' + API[1] + '/user/', // USER
         __link_story: API[0] + '/' + API[1] + '/story/', // STORY
+        __link_story_funny: API[0] + '/' + API[1] + '/funnystory/', // STORY FUNNY
+        __link_quotation: API[0] + '/' + API[1] + '/quotation/', // STORY
 
         // Link Admin
         __link_admin: '/admin-panel',
@@ -20,12 +22,14 @@ var API = ['api', 'v1.0'], // Config API: 0 => Base URL, 1 => Version
         __link_reset_password: '/auth/reset-password/?access_token=',
         __route_reset_password: '/auth/reset-password',
         __link_upload_new_story: '/uploadstory',
+        __link_upload_new_funny_story: '/uploadfunnystory',
+        __link_upload_new_quotation: '/quotation',
 
         // MongoDB Config
         __database_name: 'TruyenSongNgu',
 
         // Port app server
-        __port_server: 80, // 80 if public to IP address
+        __port_server: 1231, // 80 if public to IP address
 
         // IP adress server
         __ip_server: 'http://45.77.43.246', //45.77.43.246

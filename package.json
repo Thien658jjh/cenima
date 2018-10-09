@@ -29,10 +29,13 @@
     "mongo": "^0.1.0",
     "mongoose": "^5.0.8",
     "morgan": "~1.9.0",
+    "node-php": "0.0.1",
     "nodemailer": "^4.6.0",
     "nodemailer-express-handlebars": "^3.0.0",
     "nodemon": "^1.17.1",
+    "request": "^2.88.0",
     "serve-favicon": "^2.4.5",
+    "uniqid": "^5.0.3",
     "uuid": "^3.3.2",
     "ws": "^5.0.0"
   },

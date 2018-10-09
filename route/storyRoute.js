@@ -1,5 +1,6 @@
 module.exports = (app) => {
     let storyController = require('../controllerss/storyController'),
+        funnyStoryController = require('../controllerss/funnyStoryController'),
         config = require('../config/apiConfig').CONFIG_API
 
     app.route('/' + config.__link_story)
@@ -7,7 +8,14 @@ module.exports = (app) => {
         .post(storyController.createNewStory)
         .delete(storyController.deleteStory)
 
-    app.route('/' + config.__link_story + 'del')
-        .delete(storyController.deleteAllStory)
+        app.route('/' + config.__link_story_funny)
+        .post(funnyStoryController.newFunnyStory)
+
+    // app.route('/' + config.__link_story + 'del')
+    //     .delete(storyController.deleteAllStory)
+    //     .post(storyController.lenlale)
+
+    app.route('/' + config.__link_quotation)
+        .post(storyController.newQuotation)
 
 }

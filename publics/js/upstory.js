@@ -26,6 +26,7 @@ app.controller("upStoryController", function ($scope) {
             arrIdiom.push(object)
         }
 
+        var storyTime = Date.now().toString();
         $.post("api/v1.0/story", {
             keyupload: $scope.keyupload,
             storyName: $scope.storyName,
@@ -34,15 +35,14 @@ app.controller("upStoryController", function ($scope) {
             storyNameVN: $scope.storyNameVN,
             storyOriginal: $scope.storyOriginal,
             storyVietNam: $scope.storyVN,
+            storyTime: storyTime,
             vocabs: arrVocab,
             idioms: arrIdiom
         }, function (res) {
-            if (res.code == 200) {
-                swal("Thanh cong roi nhe ").then(value => {
+            if(res.code == 200){
+                swal("Thành công").then(value =>{
                     window.location.href = "";
                 })
-            } else {
-                swal("That bai  " + res.message)
             }
         })
 
@@ -65,3 +65,16 @@ function addNewRowVocab() {
 function newIdiom() {
     $('#idioms').append('<div class="row"><textarea class="form-control col-sm-6 col-md-6 my-input-film ng-pristine ng-valid ng-empty ng-touched" placeholder="Idiom..."></textarea><textarea class="form-control col-sm-6 col-md-6 my-input-film ng-pristine ng-valid ng-empty ng-touched" placeholder="Meaning..."></textarea></div >');
 }
+
+// Use this method to coppy all databse fr mLab to FireBase
+// if (res.code == 200) {
+//     swal("Thanh cong roi nhe " + res.resp).then(value => {
+//         $.post("api/v1.0/story/del", {
+//             resr: res.resp
+//         }), function (ress) {
+//             swal("That bai  ")
+//         }
+//     })
+// } else {
+//     swal("That bai  " + res.message)
+// }

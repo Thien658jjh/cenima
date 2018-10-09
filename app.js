@@ -3,7 +3,7 @@ process.env.TZ = 'Asia/Ho_Chi_Minh'
 
 var express = require('express'),
   config_mog = require('./config/config').CONFIG_MONGO,
-  config = require('./config/config').CONFIG_API,
+  config = require('./config/apiConfig').CONFIG_API,
   port = process.env.PORT || config.__port_server,
   app = express(),
   // session = require('express-session'),
@@ -12,7 +12,6 @@ var express = require('express'),
   bodyParser = require('body-parser'),
   mongoose = require('mongoose'),
   fileUpload = require('express-fileupload')
-
 
 // Config mongoose
 mongoose.Promise = global.Promise
@@ -53,6 +52,7 @@ var categoryModel = require("./models/categoryModel"),
   appModel2 = require('./model/appModel'), // App model
   userModel2 = require('./model/userModel'), // App model
   storyModel2 = require('./model/storyModel'), // App model
+  storyModel2 = require('./model/funnyStoryModel'), // App model
   vocabModel2 = require('./model/vocabModel'), // App model
   idiomModel2 = require('./model/idiomModel')
 
